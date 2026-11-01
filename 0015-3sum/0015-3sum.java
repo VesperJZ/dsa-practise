@@ -1,12 +1,11 @@
-import java.util.*;
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Set<List<Integer>> tripletSet = new HashSet<>();
         int n = nums.length;
+        Set<List<Integer>> tripletset = new HashSet<>();
         for(int i=0; i<n-1; i++){
             Set<Integer> hashset = new HashSet<>();
             for(int j=i+1; j<n; j++){
-                int k = -(nums[i]+nums[j]);
+                int k = -(nums[i] + nums[j]);
                 if(hashset.contains(k)){
                     List<Integer> temp = new ArrayList<>();
                     temp.add(nums[i]);
@@ -14,12 +13,12 @@ class Solution {
                     temp.add(k);
 
                     Collections.sort(temp);
-                    tripletSet.add(temp);
+                    tripletset.add(temp);
                 }
                 hashset.add(nums[j]);
             }
         }
-        List<List<Integer>> ans = new ArrayList<>(tripletSet);
+        List<List<Integer>> ans = new ArrayList<>(tripletset);
         return ans;
         
     }
